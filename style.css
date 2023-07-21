@@ -11,3 +11,7 @@
   border: 1px solid #d1d1d1;
   flex-grow: 1;
 } 
+
+.hovered {
+  background-color: black;
+}

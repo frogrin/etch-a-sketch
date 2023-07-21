@@ -8,9 +8,10 @@ function drawSquare() {
   div.classList.add('square');
   div.style.width = squareDimension;
   div.style.height = squareDimension;
+  div.addEventListener('mouseover', e => e.target.classList = 'hovered');
   container.appendChild(div);
 }
 
 for (let i = 0; i < totalSquares; i++) {
   drawSquare();
-}
+} 
