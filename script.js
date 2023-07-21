@@ -1,10 +1,18 @@
 const container = document.querySelector('.container');
-const squaresPerSide = 46;
-let totalSquares = squaresPerSide * squaresPerSide;
-let squareDimension = `${960 / squaresPerSide}px`;
+const button = document.querySelector('.btn');
+button.addEventListener('click', () => {
+  let userSquares = +prompt('Squares per side(Max: 100)');
+  if (userSquares > 100) {
+    alert('Can\'t do more than 100x100');
+  } else {
+    removeSquares();
+    drawGrid(userSquares);
+  }
+});
 
-function drawSquare() {
+function drawSquare(squaresPerSide) {
   let div = document.createElement('div');
+  let squareDimension = `${960 / squaresPerSide}px`;
   div.classList.add('square');
   div.style.width = squareDimension;
   div.style.height = squareDimension;
@@ -12,6 +20,14 @@ function drawSquare() {
   container.appendChild(div);
 }
 
-for (let i = 0; i < totalSquares; i++) {
-  drawSquare();
-} 
+function drawGrid(n) {
+  for (let i = 0; i < n * n; i++) {
+    drawSquare(n);
+  } 
+}
+
+function removeSquares() {
+  container.innerHTML = '';
+}
+
+drawGrid(46);

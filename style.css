@@ -6,7 +6,7 @@
   flex-wrap: wrap;
 }
 
-.square {
+.square, .hovered {
   box-sizing: border-box;
   border: 1px solid #d1d1d1;
   flex-grow: 1;
