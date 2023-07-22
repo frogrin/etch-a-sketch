@@ -1,5 +1,7 @@
 const container = document.querySelector('.container');
 const button = document.querySelector('.btn');
+const blackButton = document.querySelector('.black');
+const rainbowButton = document.querySelector('.rainbow');
 
 function getRandomColor() {
   let random = function () { return Math.floor(Math.random() * 256) };
@@ -35,6 +37,24 @@ button.addEventListener('click', () => {
     removeSquares();
     drawGrid(userSquares);
   }
+});
+
+function blackMode(square) {
+  square.addEventListener('mouseover', () => square.style.backgroundColor = 'black');
+}
+
+blackButton.addEventListener('click', () => {
+  let squares = document.querySelectorAll('.square');
+  squares.forEach(square => blackMode(square));
+});
+
+function rainbowMode(square) {
+  square.addEventListener('mouseover', () => square.style.backgroundColor = getRandomColor());
+}
+
+rainbowButton.addEventListener('click', () => {
+  let squares = document.querySelectorAll('.square');
+  squares.forEach(square => rainbowMode(square));
 });
 
 drawGrid(46);
