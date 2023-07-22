@@ -2,13 +2,14 @@ const container = document.querySelector('.container');
 const button = document.querySelector('.btn');
 const blackButton = document.querySelector('.black');
 const rainbowButton = document.querySelector('.rainbow');
+const shadingButton = document.querySelector('.shading');
 
 function getRandomColor() {
   let random = function () { return Math.floor(Math.random() * 256) };
   let randomColor = `rgb(${random()},${random()},${random()})`;
   return randomColor;
 }
-console.log(getRandomColor());
+
 function drawSquare(squaresPerSide) {
   let div = document.createElement('div');
   let squareDimension = `${960 / squaresPerSide}px`;
@@ -57,4 +58,23 @@ rainbowButton.addEventListener('click', () => {
   squares.forEach(square => rainbowMode(square));
 });
 
+
+function shadingMode(square) {
+  let r = 229.5;
+  let g = 229.5;
+  let b = 229.5;
+  console.log(`Before: ${r, g, b}`);
+  square.addEventListener('mouseover', () => {
+    square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    r -= 25.5;
+    g -= 25.5;
+    b -= 25.5;
+    console.log(`After: ${r, g, b}`);
+  });
+} 
+
+shadingButton.addEventListener('click', () => {
+  let squares = document.querySelectorAll('.square');
+  squares.forEach(square => shadingMode(square));
+})
 drawGrid(46);
