@@ -58,18 +58,16 @@ rainbowButton.addEventListener('click', () => {
   squares.forEach(square => rainbowMode(square));
 });
 
-
 function shadingMode(square) {
+  // Make the first color light grey and decrement it each pass through
   let r = 229.5;
   let g = 229.5;
   let b = 229.5;
-  console.log(`Before: ${r, g, b}`);
   square.addEventListener('mouseover', () => {
     square.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
     r -= 25.5;
     g -= 25.5;
     b -= 25.5;
-    console.log(`After: ${r, g, b}`);
   });
 } 
 
