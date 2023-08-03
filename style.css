@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #eeeeee;
 }
 .container {
   border: 2px solid black;
@@ -11,6 +12,8 @@ body {
   width: 960px;
   display: flex;
   flex-wrap: wrap;
+  background-color: #ffffff;
+  border-radius: 6px;
 }
 
 .square, .hovered {
@@ -18,3 +21,12 @@ body {
   border: 1px solid #d1d1d1;
   flex-grow: 1;
 } 
+
+button {
+  font-size: 24px;
+  padding: 20px 30px;
+  margin: 20px 10px;
+  background-color: rgb(96, 144, 189);
+  border-radius: 10px;
+  color: #222222;
+}
